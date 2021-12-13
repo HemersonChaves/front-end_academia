@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>app fitness</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      font-size: 1.6em;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    .container {
+      color: #FFF;
+      background: #24690E;
+      min-height: 100%;
+    }
+
+    header {
+      padding: 10px;
+      margin: 0 10px;
+      min-height: 100%;
+      height: 100%;
+    }
+
+    .nome {
+      font-family: sans-serif;
+      font-size: 24px;
+    }
+
+    .avatar {
+      border-radius: 5em;
+      width: 5em;
+      height: 5em;
+      border: 0.175em solid #FFF;
+    }
+    .semana{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .semana div{
+      margin: 0.1em;
+      padding: 0.1em 0.5em;
+      border-radius: 1em;
+    }
+    .semana .ativa{
+      background: #33AD0E;
+    }
+    .semana .feito{
+      background: #14640E;
+    }
+    .session {
+      padding: 20px;
+      background: #FFF;
+      border-radius: 15px 15px 0 0;
+      color: #24690E;
+      min-height: 100%;
+      height: 100%;
+    }
+    .treino{
+      border-radius: 1em;
+      margin: 0.25em;
+      padding: 0.5em;
+      background: #24690E;
+      color: #FFF;
+      
+    }
+    .treino .infor-treino{
+      margin: 0.75em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img class="avatar" src="img\avatar.jpg" alt="avatar">
+      <h2 class="nome">Nathanael Monteiro</h2>
+      <span>Avanado</span><br>
+      <span>Treinador: Alisson Moreira</span>
+      <section class="semana">
+        <div class="feito">seg</div>
+        <div class="feito">ter</div>
+        <div class="ativa">qua</div>
+        <div>qui</div>
+        <div>sex</div>
+        <div>sab</div>
+        <div>dom</div>
+      </section>
+    </header>
+    <section class="session">
+      <h1>Rotina de treino</h1>
+      <hr>
+      <span>
+        A fazer <span>10</span>
+      </span>
+      <div class="treino">
+        puxada alta aberta frente
+        <div class="infor-treino">
+          <div>series<p>3</p></div>
+          <div>repeticao<p>12</p></div>
+          <div>carga<p>1</p></div>
+          <div>descanco<p>60</p></div>
+          <div>v</div>
+        </div>
+        obs.: + fechado
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
