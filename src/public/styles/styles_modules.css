@@ -5,8 +5,8 @@
 }
 
 :root {
-  --soft-graey: #DAE1E4;
-  --light-graey: #F4F5F6;
+  --soft-gray: #DAE1E4;
+  --light-gray: #F4F5F6;
   --medium-gray: #959EA4;
   --dark-gray: #424B51;
   --green-500: #1CB481;
@@ -34,6 +34,7 @@ button,
 textarea,
 select {
   font: inherit;
+  border: none;
 }
 
 p,
@@ -51,7 +52,7 @@ a{
 }
 
 .container {
-  color: var(--light-graey);
+  color: var(--light-gray);
   background: var(--green-500);
 
   min-height: 100%;
@@ -90,12 +91,12 @@ header {
 }
 
 .semana .ativa {
-  background: var(--light-graey);
+  background: var(--light-gray);
   color: var(--green-500);
 }
 
 .semana .feito {
-  background: var(--soft-graey);
+  background: var(--soft-gray);
   color: var(--green-500);
 }
 
@@ -126,15 +127,47 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
-nav{
+.navigation{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding:0.2rem 0.5rem 2rem 0.5rem;
-  color: var(--light-graey);
+  color: var(--light-gray);
 
 }
 
-.navigation, .push {
+.menu, .push {
   height: 50px;
+}
+#menu-h ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+#menu-h ul li {
+  display: inline;
+  justify-content: space-between;
+  
+}
+
+#menu-h ul li a {
+  color: #FFF;
+  
+  justify-content: space-between;
+  
+  
+  transition: background .4s;
+}
+
+#menu-h ul li a:hover {
+  background-color: rgb(24, 139, 233);
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  background: #424B51;
 }
