@@ -1,40 +1,40 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-  --soft-gray: #DAE1E4;
-  --light-gray: #F4F5F6;
-  --medium-gray: #959EA4;
-  --dark-gray: #424B51;
-  --green-500: #1CB481;
+    --soft-gray: #DAE1E4;
+    --light-gray: #F4F5F6;
+    --medium-gray: #959EA4;
+    --dark-gray: #424B51;
+    --green-500: #1CB481;
 }
 
 html,
 body {
 
-  font-family: 'Mulish', sans-serif;
-  height: 100%;
+    font-family: 'Mulish', sans-serif;
+    height: 100%;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6em;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;
-  border: none;
+    font: inherit;
+    border: none;
 }
 
 p,
@@ -44,214 +44,266 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .color-primary {
-  color: var(--light-gray);
-  background: var(--green-500);
+    color: var(--light-gray);
+    background: var(--green-500);
 }
 
 .color-inverted {
-  color: var(--green-500);
-  background: var(--light-gray);
+    color: var(--green-500);
+    background: var(--light-gray);
 }
 
 .container {
-  min-height: 100%;
-  margin-bottom: -50px;
+    min-height: 100%;
+    margin-bottom: -50px;
 }
 
 .heading {
-  margin: 0 auto 3rem;
-  justify-content: center;
-  display: flex;
-  width: 100%;
+    margin: 0 auto 3rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
 }
+
 header {
     padding: 2rem 2rem;
     min-height: 100%;
     height: 100%;
-  }
-  
-.main_login {
-  margin: 5rem auto;
-  padding: 2rem;
-  width: 100%;
 }
 
-
-.nome {
-  font-size: 2;
+.subnav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
 }
 
-.avatar {
-  border-radius: 4em;
-  width: 4em;
-  height: 4em;
-  border: 0.175em solid #FFF;
-}
-
-.semana {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.semana div {
-  margin: 0.1em;
-  padding: 0.1em 0.5em;
-  border-radius: 1em;
-}
-
-.semana .ativa {
-  background: var(--light-gray);
-  color: var(--green-500);
-}
-
-.semana .feito {
-  background: var(--soft-gray);
-  color: var(--green-500);
+.subnav div a {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: end;
+    margin-bottom: -0.3em;
 }
 
 .main {
-  padding: 20px;
+    padding: 20px;
+    flex: 1;
+    min-height: 100%;
+    height: 100%;
+}
 
-  flex: 1;
+.main-treino {
+    border-radius: 35px 35px 0 0;
+}
 
-  background: #FFF;
-  border-radius: 35px 35px 0 0;
-  color: #24690E;
-  min-height: 100%;
-  height: 100%;
+.main_login {
+    margin: 5rem auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+
+.subtitulo {
+    font-size: 2rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    border: 0.175em solid #FFF;
+}
+
+.semana {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.semana div {
+    margin: 0.1em;
+    padding: 0.1em 0.5em;
+    border-radius: 1em;
+}
+
+.semana .ativa {
+    background: var(--light-gray);
+    color: var(--green-500);
+}
+
+.semana .feito {
+    background: var(--soft-gray);
+    color: var(--green-500);
 }
 
 .treino {
-  border-radius: 1em;
-  margin: 0.25em;
-  padding: 0.5em;
-  background: var(--green-500);
-  color: #FFF;
+    border-radius: 1em;
+    margin: 0.25em;
+    padding: 0.5em;
+    background: var(--green-500);
+    color: #FFF;
 
 }
 
 .treino .infor-treino {
-  margin: 0.75em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    margin: 0.75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.2rem 0.5rem 2rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2rem 0.5rem 2rem 0.5rem;
 }
 
 .menu,
 .push {
-  height: 50px;
+    height: 50px;
 }
 
 #menu-h ul {
-  width: 100%;
-  list-style: none;
-  padding: 0;
+    width: 100%;
+    list-style: none;
+    padding: 0;
 }
 
 #menu-h ul li {
-  display: inline;
-  justify-content: space-between;
+    display: inline;
+    justify-content: space-between;
 
 }
 
 #menu-h ul li a {
-  color: #FFF;
+    color: #FFF;
 
-  justify-content: space-between;
+    justify-content: space-between;
 
 
-  transition: background .4s;
+    transition: background .4s;
 }
 
 #menu-h ul li a:hover {
-  background-color: rgb(24, 139, 233);
+    background-color: rgb(24, 139, 233);
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #424B51;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #424B51;
 }
 
 /* form control */
-.color-primary .form-control{
+.color-primary .form-control {
     border-bottom: 1px solid var(--light-gray);
 }
-.color-inverted .form-control{
+
+.color-inverted .form-control {
     border-bottom: 1px solid var(--green-500);
 }
+
 .form-group {
-  margin-bottom: 1rem;
-  position: relative;
-  padding: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 1.25rem;
 }
 
 .form-control {
-  background: transparent;
-  
-  display: block;
-  width: 100%;
+    background: transparent;
+    display: block;
+    width: 100%;
 }
 
 .form-control:focus {
-  outline: none;
+    outline: none;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
+
 .form-group label {
-  display: block;
-  margin-bottom: 0;
-  position: absolute;
-  top: 10%;
-  pointer-events: none;
+    display: block;
+    margin-bottom: 0;
+    position: absolute;
+    top: 10%;
+    pointer-events: none;
 }
 
 .form-control:focus~label,
-.form-control  input[type="email"]:invalid~label,
+.form-control input[type="email"]:invalid~label,
 .form-control:valid~label {
-  top: -0.75rem;
-  font-size: 1rem;
+    top: -0.75rem;
+    font-size: 1rem;
 }
 
 .form-button {
-  margin: 5rem auto;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-  font-size: 1.75rem;
-  font-weight: 700;
+    margin: 5rem auto;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .btn {
-  width: 90%;
-  padding: 1.25rem;
-  border-radius: 1rem;
-  margin: 1rem;
-  margin-bottom: 0;
+    width: 90%;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
 .btn-form:hover {
-  background: var(--soft-gray);
+    background: var(--soft-gray);
+}
+
+.user-header {
+    display: flex;
+    margin-top: 0;
+}
+.user {
+    display: flex;
+    margin-top: 1rem;
+
+}
+
+.user img {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 10px;
+}
+
+.user-info {
+    margin-left: 1rem;
+}
+
+.user-info h5 {
+    color: var(--dark-gray);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.user-info small {
+    color: var(--green-500);
+    font-size: 1.5rem;
+}
+
+.user-info small span {
+    color: var(--medium-gray);
 }
