@@ -51,17 +51,17 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-end;
-        }
-
-        .card-event span {
-            margin: 1rem;
+            margin-right: 1rem;
+            padding: 0.5rem 0 2.75rem;
         }
 
         .card-primary {
-            margin: 1rem;
-            flex: 1;
-            align-self: flex-end;
-            min-height: 100%;
+            margin-left: 1rem;
+
+            display: flex;
+            align-items: flex-end;
+
+            height: 100px;
         }
     </style>
 </head>
@@ -94,8 +94,10 @@
                     <div>
                         <span class="card-modo ">Avançando</span>
                         <div class="card-primary">
-                            <h4 class="card-title">Costas e biceps</h4>
-                            <small>30min</small>
+                            <div>
+                                <h4 class="card-title">Costas e biceps</h4>
+                                <small>30min</small>
+                            </div>
                         </div>
                     </div>
                     <div class="card-event">
@@ -107,12 +109,14 @@
                 <div class="card color-primary">
                     <div>
                         <span class="card-modo ">Avançando</span>
-                        <div>
-                            <h4 class="card-title">Costas e biceps</h4>
-                            <small>30min</small>
+                        <div class="card-primary">
+                            <div>
+                                <h4 class="card-title">Costas e biceps</h4>
+                                <small>30min</small>
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="card-event">
                         <span>10/10/2022</span>
                         <span>18:00h</span>
                     </div>
@@ -121,82 +125,31 @@
                 <div class="card color-primary">
                     <div>
                         <span class="card-modo ">Avançando</span>
-                        <div>
-                            <h4 class="card-title">Costas e biceps</h4>
-                            <small>30min</small>
+                        <div class="card-primary">
+                            <div>
+                                <h4 class="card-title">Costas e biceps</h4>
+                                <small>30min</small>
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="card-event">
                         <span>10/10/2022</span>
                         <span>18:00h</span>
                     </div>
 
                 </div>
-
             </div>
     </div>
-    <div class="treino">
-        <div class="cards">
-            <div class="card card-1">
-                <div class="card__icon"><i class="fas fa-bolt"></i></div>
-                <p class="card__exit"><i class="fas fa-times"></i></p>
-                <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                <p class="card__apply">
-                    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="treino">
-            puxada alta aberta frente
-            <div class="infor-treino">
-                <div>series<p>3</p>
-                </div>
-                <div>repetição<p>12</p>
-                </div>
-                <div>carga<p>1</p>
-                </div>
-                <div>descanco<p>60</p>
-                </div>
-                <div>v</div>
-            </div>
-            obs.: + fechado
-        </div>
-        <div class="treino">
-            puxada alta aberta frente
-            <div class="infor-treino">
-                <div>series<p>3</p>
-                </div>
-                <div>repetição<p>12</p>
-                </div>
-                <div>carga<p>1</p>
-                </div>
-                <div>descanco<p>60</p>
-                </div>
-                <div>v</div>
-            </div>
-            obs.: + fechado
-        </div>
-        <div class="push"></div>
-        </section>
-        <footer class="menu">
+    <footer class="menu">
 
-            <nav id="menu-h">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="las la-lg la-pen"></i>
-                        </a>
-                    </li>
-
-                    <li><a href="#"><i class="las la-lg la-pen"></i></a></li>
-
-                    <li><a href="#"><i class="las la-lg la-pen"></i></a></li>
-
-                    <li><a href="#"><i class="las la-lg la-pen"></i></a></li>
-                </ul>
-            </nav>
-        </footer>
-    </div>
+        <a href="#" class="ativa">
+            <i class="las la-2x la-dumbbell"></i>
+        </a>
+        <a href="#"><i class="las la-2x la-users"></i></a>
+        <a href="#"><i class="las la-2x la-stopwatch"></i></a>
+        <a href="#"><i class="las la-2x la-calendar-day"></i></a>
+        </nav>
+    </footer>
 </body>
 
 </html>
