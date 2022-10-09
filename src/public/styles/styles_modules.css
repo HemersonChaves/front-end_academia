@@ -168,44 +168,25 @@ header {
     padding: 0.2rem 0.5rem 2rem 0.5rem;
 }
 
-.menu,
-.push {
+.menu {
     height: 50px;
-}
-
-#menu-h ul {
-    width: 100%;
-    list-style: none;
-    padding: 0;
-}
-
-#menu-h ul li {
-    display: inline;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-
-}
-
-#menu-h ul li a {
-    color: #FFF;
-
-    justify-content: space-between;
-
-
-    transition: background .4s;
-}
-
-#menu-h ul li a:hover {
-    background-color: rgb(24, 139, 233);
-}
-
-footer {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    background: #424B51;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    background: #f3f3f3;
+    color: var(--dark-gray);
 }
-
+.menu a{
+    margin: 2rem;
+}
+.menu .ativa{
+    color: var(--green-500);
+}
 /* form control */
 .color-primary .form-control {
     border-bottom: 1px solid var(--light-gray);
@@ -275,6 +256,7 @@ input:focus {
     display: flex;
     margin-top: 0;
 }
+
 .user {
     display: flex;
     margin-top: 1rem;
