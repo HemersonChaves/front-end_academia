@@ -121,7 +121,23 @@ header {
     height: 6rem;
     border: 0.175em solid #FFF;
 }
+.main-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
 
+}
+
+.panel div {
+    text-align: center;
+}
 .semana {
     display: flex;
     flex-direction: row;
@@ -145,7 +161,7 @@ header {
     color: var(--green-500);
 }
 
-.treino {
+.card-treino {
     border-radius: 1em;
     margin: 0.25em;
     padding: 0.5em;
@@ -154,7 +170,7 @@ header {
 
 }
 
-.treino .infor-treino {
+.card-treino .infor-treino {
     margin: 0.75em;
     display: flex;
     flex-direction: row;
