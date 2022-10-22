@@ -1,0 +1,55 @@
+.container {
+  height: 100%;
+  color: var(--light-gray);
+  background: var(--green-500);
+}
+
+.header {
+  margin: 0 auto 3rem;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  padding: 10rem 2rem;
+  margin-bottom: 5rem;
+}
+.main_login {
+  margin: 10rem auto;
+  width: 100%;
+}
+.form_control {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 5rem auto 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.form_button {  
+  display: flex;
+  width: 100%;  
+}
+
+.btn {
+  width: 90%;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--green-500);
+}
+
+.btn:hover {
+  background: var(--soft-gray);
+}
+.btn_link{
+  margin: 0 2rem;
+}
+
+.btn_link:hover {
+  color: var(--soft-gray); 
+}
+.btn_link span {
+  color: var(--light-gray); 
+}
