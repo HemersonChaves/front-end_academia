@@ -11,7 +11,7 @@ describe('Component Login', () => {
 
     expect(h1Element).toBeInTheDocument();
   });
-  test('deve iniciar com botões de cadastro ou de login ', () => {
+  test('deve iniciar com botões de cadastro ou de login e lembrar senha ', () => {
     const { getByText } = render(<App />);
     // encontrar o botão iniciar sessão
     const botaoIniciarSessao = getByText('Entrar');
@@ -19,8 +19,15 @@ describe('Component Login', () => {
     // encontrar o botão criar conta
     const botaoCadastrar = getByText('Cadastrar');
 
+    const botaoLembrarSenha = screen.getByRole(
+      'link',
+      {
+        name: /lembrar senha/i,
+      },
+    );
     expect(botaoIniciarSessao).toBeInTheDocument();
     expect(botaoCadastrar).toBeInTheDocument();
+    expect(botaoLembrarSenha).toBeInTheDocument();
   });
   test.todo('Testar se o botão redireciona para o cadastro de novo usuário');
   test.todo('Testar se o botão redireciona para area de login');
