@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './presentation/Page/login';
-import './style/global.css';
 
 function App() {
   return (
