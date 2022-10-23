@@ -1,9 +1,13 @@
-import { screen, render } from '@testing-library/react';
-import App from '../../../App';
+import { screen, render, waitFor } from '@testing-library/react';
+import {
+  useLocation,
+} from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import RoutesPages from '../../../router/router';
 
 describe('Component Login', () => {
   test('deve conter o elemento título', () => {
-    render(<App />);
+    render(<RoutesPages />);
 
     const h1Element = screen.getByRole('heading', {
       name: /bem vindo ao gymr/i,
@@ -12,12 +16,12 @@ describe('Component Login', () => {
     expect(h1Element).toBeInTheDocument();
   });
   test('deve iniciar com botões de cadastro ou de login e lembrar senha ', () => {
-    const { getByText } = render(<App />);
+    render(<RoutesPages />);
     // encontrar o botão iniciar sessão
-    const botaoIniciarSessao = getByText('Entrar');
+    const botaoIniciarSessao = screen.getByText('Entrar');
 
     // encontrar o botão criar conta
-    const botaoCadastrar = getByText('Cadastrar');
+    const botaoCadastrar = screen.getByText('Cadastrar');
 
     const botaoLembrarSenha = screen.getByRole(
       'link',
@@ -29,6 +33,31 @@ describe('Component Login', () => {
     expect(botaoCadastrar).toBeInTheDocument();
     expect(botaoLembrarSenha).toBeInTheDocument();
   });
-  test.todo('Testar se o botão redireciona para o cadastro de novo usuário');
+  test('deve redireciona para o cadastro de novo usuário', async () => {
+    render(<RoutesPages />);
+    // encontrar o botão iniciar sessão
+    const botaoCadastrar = screen.getByText('Cadastrar');
+
+    await userEvent.click(botaoCadastrar);
+    // toMatchSnapshot()
+
+    await waitFor(() => {
+      expect(botaoCadastrar).toHaveAttribute('href', '/cadastro');
+    });
+  });
+  // test('Testar ', async () => {
+  //   const { container, debug } = render(<RoutesPages />);
+  //   debug();
+
+  //   const botaoCadastrar = screen.getByText('Cadastrar');
+  //   // expect(botaoCadastrar).toHaveAttribute('href', '/cadastro');
+
+  //   await userEvent.click(botaoCadastrar);
+  //   // toMatchSnapshot()
+
+  //   // await waitFor(() => {
+  //   //   expect(container).toHave;
+  //   // });
+  // });
   test.todo('Testar se o botão redireciona para area de login');
 });
