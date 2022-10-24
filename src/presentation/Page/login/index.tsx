@@ -1,6 +1,13 @@
+import { Link, useNavigate } from 'react-router-dom';
 import style from './styles.module.css';
 
 function Login() {
+  const navigate = useNavigate();
+  function handlePageCadastro() {
+    console.log('handlePageCadastro');
+    // navigate('/cadastro');
+  }
+
   return (
     <div className={style.container}>
       <header className={style.header}>
@@ -8,8 +15,14 @@ function Login() {
       </header>
       <main className={style.main_login}>
         <div className={style.form_control}>
-          <button className={style.btn} type="button">Entrar</button>
-          <button className={style.btn} type="button">Cadastrar</button>
+          <Link to="/cadastro" className={style.btn} type="button">Entrar</Link>
+          <button
+            onClick={handlePageCadastro}
+            className={style.btn}
+            type="button"
+          >
+            Cadastrar
+          </button>
         </div>
         <div>
           <a href="/" className={style.btn_link}>
@@ -18,9 +31,7 @@ function Login() {
             <span> senha </span>
           </a>
         </div>
-
       </main>
-
     </div>
   );
 }

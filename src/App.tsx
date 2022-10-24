@@ -1,13 +1,12 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './presentation/Page/login';
+import { HashRouter } from 'react-router-dom';
+import RoutesPages from './router/router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <HashRouter>
+      <RoutesPages />
+    </HashRouter>
+
   );
 }
 
