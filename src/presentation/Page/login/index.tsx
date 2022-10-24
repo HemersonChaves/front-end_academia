@@ -4,8 +4,7 @@ import style from './styles.module.css';
 function Login() {
   const navigate = useNavigate();
   function handlePageCadastro() {
-    console.log('handlePageCadastro');
-    // navigate('/cadastro');
+    navigate('/cadastro');
   }
 
   return (
