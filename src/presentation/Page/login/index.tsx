@@ -4,7 +4,10 @@ import style from './styles.module.css';
 function Login() {
   const navigate = useNavigate();
   function handlePageCadastro() {
-    navigate('/cadastro');
+    navigate('novousuario');
+  }
+  function handlePageInicial() {
+    navigate('treino');
   }
 
   return (
@@ -14,7 +17,14 @@ function Login() {
       </header>
       <main className={style.main_login}>
         <div className={style.form_control}>
-          <Link to="/cadastro" className={style.btn} type="button">Entrar</Link>
+
+          <button
+            onClick={handlePageInicial}
+            className={style.btn}
+            type="button"
+          >
+            Entrar
+          </button>
           <button
             onClick={handlePageCadastro}
             className={style.btn}
@@ -24,11 +34,12 @@ function Login() {
           </button>
         </div>
         <div>
-          <a href="/" className={style.btn_link}>
+          <Link to="lembrarsenha" className={style.btn_link} type="button">
             lembrar
             {' '}
             <span> senha </span>
-          </a>
+          </Link>
+
         </div>
       </main>
     </div>
