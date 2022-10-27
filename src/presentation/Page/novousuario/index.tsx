@@ -1,3 +1,4 @@
+import Nav from '../../Components/header';
 import style from './styles.module.css';
 
 function NovoUsuario() {
@@ -5,13 +6,9 @@ function NovoUsuario() {
 
     <div className={style.container} data-testid="novo-usuario">
       <header>
-        <nav className={style.navigation}>
-          <a href="/">
-            <i className="las la-lg la-angle-left" />
-          </a>
-        </nav>
+        <Nav />
         <div className={style.heading}>
-          <h1>Criar nova</h1>
+          <h1>Nova conta</h1>
         </div>
       </header>
       <section>
