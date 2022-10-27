@@ -1,72 +1,73 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb",
-        "airbnb-typescript"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": [
-            "./tsconfig.json"
-        ]
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": [
-                    "test.{ts,tsx}", // repos with a single test file
-                    "test-*.{ts,tsx}", // repos with multiple top-level test files
-                    "**/*{.,_}{test,spec}.{ts,tsx}", // tests where the extension or filename suffix denotes that it is a test
-                    "**/jest.config.ts", // jest config
-                    "**/jest.setup.ts" // jest setup
-                ],
-                "optionalDependencies": false
-            }
-        ]
-    },
-    "overrides": [
-        {
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ],
-            "excludedFiles": [
-                "*.test.ts",
-                "*.spec.ts"
-            ],
-            // As mentioned in the comments, you should extend TypeScript plugins here,
-            // instead of extending them outside the `overrides`.
-            // If you don't want to extend any rules, you don't need an `extends` attribute.
-            "extends": [
-                "plugin:@typescript-eslint/recommended",
-                "plugin:@typescript-eslint/recommended-requiring-type-checking"
-            ],
-            "parserOptions": {
-                "project": [
-                    "./tsconfig.json"
-                ] // Specify it only for TypeScript files
-            }
-        }
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
     ]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "test.{ts,tsx}", // repos with a single test file
+          "test-*.{ts,tsx}", // repos with multiple top-level test files
+          "**/*{.,_}{test,spec}.{ts,tsx}", // tests where the extension or filename suffix denotes that it is a test
+          "**/jest.config.ts", // jest config
+          "**/jest.setup.ts" // jest setup
+        ],
+        "optionalDependencies": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "excludedFiles": [
+        "*.test.ts",
+        "*.spec.ts"
+      ],
+      // As mentioned in the comments, you should extend TypeScript plugins here,
+      // instead of extending them outside the `overrides`.
+      // If you don't want to extend any rules, you don't need an `extends` attribute.
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": [
+          "./tsconfig.json"
+        ] // Specify it only for TypeScript files
+      }
+    }
+  ]
 }
