@@ -1,11 +1,17 @@
 import style from './styles.module.css';
 
-function Nav() {
+interface NavProps {
+  origem: string;
+  acao:'';
+}
+
+function Nav({ origem, acao }:NavProps) {
   return (
     <nav className={style.navigation}>
-      <a href="/">
+      <a href={origem}>
         <i className="las la-lg la-angle-left" />
       </a>
+      {acao ? <a href={origem} aria-label={origem}><i className="las la-lg la-pen" /></a> : '' }
     </nav>
   );
 }

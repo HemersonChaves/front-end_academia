@@ -6,7 +6,7 @@ function NovoUsuario() {
 
     <div className={style.container} data-testid="novo-usuario">
       <header>
-        <Nav />
+        <Nav origem="/" acao="" />
         <div className={style.heading}>
           <h1>Nova conta</h1>
         </div>
