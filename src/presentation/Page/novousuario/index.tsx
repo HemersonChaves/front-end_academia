@@ -1,12 +1,11 @@
-import Nav from '../../Components/header';
+import Nav from '../../Components/nav';
 import style from './styles.module.css';
 
 function NovoUsuario() {
   return (
-
     <div className={style.container} data-testid="novo-usuario">
       <header>
-        <Nav origem="/" acao="" />
+        <Nav path="/" />
         <div className={style.heading}>
           <h1>Nova conta</h1>
         </div>
