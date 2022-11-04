@@ -59,20 +59,20 @@ describe('Component Login', () => {
       // expect(botaoCadastrar).toHaveAttribute('href', '/cadastro');
     });
   });
-  // test('deve redirecionar para página de erro 404', async () => {
-  //   const badRoute = '/some/bad/route';
+  test('deve redirecionar para página de erro 404', async () => {
+    const badRoute = '/some/bad/route';
 
-  //   // use <MemoryRouter> when you want to manually control the history
-  //   render(
-  //     <MemoryRouter initialEntries={[badRoute]}>
-  //       <RoutesPages />
-  //     </MemoryRouter>,
-  //   );
+    // use <MemoryRouter> when you want to manually control the history
+    render(
+      <MemoryRouter initialEntries={[badRoute]}>
+        <RoutesPages />
+      </MemoryRouter>,
+    );
 
-  //   // verify navigation to "no match" route
-  //   await waitFor(() => {
-  //     expect(screen.getByText(/erro 404/i)).toBeInTheDocument();
-  //   });
-  // });
+    // verify navigation to "no match" route
+    await waitFor(() => {
+      expect(screen.getByText(/erro 404/i)).toBeInTheDocument();
+    });
+  });
   test.todo('Testar se o botão redireciona para area de login');
 });
