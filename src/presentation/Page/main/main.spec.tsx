@@ -32,7 +32,7 @@ describe('Component Page inicial', () => {
       </ReactRouterDom.BrowserRouter>,
     );
     // encontrar o botão iniciar sessão
-    const botaoIniciarSessao = screen.getByText('Entrar');
+    const botaoEntrar = screen.getByText('Entrar');
 
     // encontrar o botão criar conta
     const botaoCadastrar = screen.getByText('Cadastrar');
@@ -43,7 +43,7 @@ describe('Component Page inicial', () => {
         name: /lembrar senha/i,
       },
     );
-    expect(botaoIniciarSessao).toBeInTheDocument();
+    expect(botaoEntrar).toBeInTheDocument();
     expect(botaoCadastrar).toBeInTheDocument();
     expect(botaoLembrarSenha).toBeInTheDocument();
   });
@@ -76,5 +76,18 @@ describe('Component Page inicial', () => {
       expect(mockedNavigate).toHaveBeenNthCalledWith(1, 'novousuario');
     });
   });
-  test.todo('Testar se o botão redireciona para area de login');
+  test('Testar se o botão redireciona para area de login', async () => {
+    render(
+      <ReactRouterDom.BrowserRouter>
+        <RoutesPages />
+      </ReactRouterDom.BrowserRouter>,
+    );
+    // encontrar o botão iniciar sessão
+    const botaoEntrar = screen.getByText('Entrar');
+
+    await interacaoUsuario.click(botaoEntrar);
+    await waitFor(() => {
+      expect(mockedNavigate).toHaveBeenNthCalledWith(1, 'login');
+    });
+  });
 });
