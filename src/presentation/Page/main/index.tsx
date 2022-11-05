@@ -6,8 +6,8 @@ function Main() {
   function handlePageCadastro() {
     navigate('novousuario');
   }
-  function handlePageInicial() {
-    navigate('treino');
+  function handlePageLogin() {
+    navigate('login');
   }
 
   return (
@@ -19,7 +19,7 @@ function Main() {
         <div className={style.form_control}>
 
           <button
-            onClick={handlePageInicial}
+            onClick={handlePageLogin}
             className={style.btn}
             type="button"
           >

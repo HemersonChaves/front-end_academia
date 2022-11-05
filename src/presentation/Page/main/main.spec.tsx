@@ -76,7 +76,7 @@ describe('Component Page inicial', () => {
       expect(mockedNavigate).toHaveBeenNthCalledWith(1, 'novousuario');
     });
   });
-  test('Testar se o botão redireciona para area de login', async () => {
+  test('deve redireciona para area de login', async () => {
     render(
       <ReactRouterDom.BrowserRouter>
         <RoutesPages />

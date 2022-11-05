@@ -1,6 +1,7 @@
 import {
   Route, Routes,
 } from 'react-router-dom';
+import Login from '../presentation/Page/Login';
 
 import Main from '../presentation/Page/main';
 import NoMatch from '../presentation/Page/noMatch';
@@ -10,7 +11,7 @@ function RoutesPages() {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="login" element={<Main />} />
+      <Route path="login" element={<Login />} />
       <Route path="novousuario" element={<NovoUsuario />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
