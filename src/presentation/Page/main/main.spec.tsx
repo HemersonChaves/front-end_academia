@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedNavigate,
 }));
 
-describe('Component Login', () => {
+describe('Component Page inicial', () => {
   const interacaoUsuario = userEvent.setup();
   test('deve conter o elemento título', () => {
     render(

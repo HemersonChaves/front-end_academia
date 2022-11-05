@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import style from './styles.module.css';
 
-function Login() {
+function Main() {
   const navigate = useNavigate();
   function handlePageCadastro() {
     navigate('novousuario');
@@ -45,4 +45,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default Main;
