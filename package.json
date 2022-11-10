@@ -12,7 +12,10 @@
         "preview": "vite preview",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
-        "test": "jest --watch --coverage"
+        "test": "jest --passWithNoTests --no-cache --runInBand",
+        "test:coverage": "yarn test --coverage",
+        "test:watch": "yarn test --watch",
+        "test:staged": "yarn test --findRelatedTests"
     },
     "dependencies": {
         "line-awesome": "^1.3.0",
