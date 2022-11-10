@@ -54,7 +54,9 @@
       ],
       "excludedFiles": [
         "*.test.ts",
-        "*.spec.ts"
+        "*.spec.ts",
+        "*.test.tsx",
+        "*.spec.tsx"
       ],
       // As mentioned in the comments, you should extend TypeScript plugins here,
       // instead of extending them outside the `overrides`.
