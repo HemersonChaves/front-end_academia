@@ -1,7 +1,7 @@
 import { screen, render, waitFor } from '@testing-library/react';
 import * as ReactRouterDom from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import RoutesPages from '../../../router/router';
+import RoutesPages from '../../../../src/router/router';
 
 const mockedNavigate = jest.fn();
 
