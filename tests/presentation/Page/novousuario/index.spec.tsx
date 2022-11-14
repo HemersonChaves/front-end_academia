@@ -16,4 +16,11 @@ describe('Componente <novousuario />', () => {
     expect(inputEmail).toHaveValue('');
     expect(inputEmail).toBeInTheDocument();
   });
+  test('deve iniciar com inputs de senha vazios', () => {
+    render(<NovoUsuario />);
+
+    const inputSenha = screen.getByRole('textbox', { name: /Email/i });
+    expect(inputSenha).toHaveValue('');
+    expect(inputSenha).toBeInTheDocument();
+  });
 });
