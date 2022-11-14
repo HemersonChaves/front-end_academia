@@ -9,4 +9,11 @@ describe('Componente <novousuario />', () => {
     expect(inputNome).toHaveValue('');
     expect(inputNome).toBeInTheDocument();
   });
+  test('deve iniciar com inputs de email vazios', () => {
+    render(<NovoUsuario />);
+
+    const inputEmail = screen.getByRole('textbox', { name: /Email/i });
+    expect(inputEmail).toHaveValue('');
+    expect(inputEmail).toBeInTheDocument();
+  });
 });
