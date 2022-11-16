@@ -19,8 +19,15 @@ describe('Componente <novousuario />', () => {
   test('deve iniciar com inputs de senha vazios', () => {
     render(<NovoUsuario />);
 
-    const inputSenha = screen.getByRole('textbox', { name: /Email/i });
+    const inputSenha = screen.getByLabelText(/Senha/);
     expect(inputSenha).toHaveValue('');
     expect(inputSenha).toBeInTheDocument();
+  });
+  test('deve iniciar com inputs de confirmar senha vazios', () => {
+    render(<NovoUsuario />);
+
+    const inputConfirmacaoSenha = screen.getByRole('textbox', { name: /confirmar senha/i });
+    expect(inputConfirmacaoSenha).toHaveValue('');
+    expect(inputConfirmacaoSenha).toBeInTheDocument();
   });
 });
