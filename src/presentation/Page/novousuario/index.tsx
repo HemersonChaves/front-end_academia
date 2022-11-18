@@ -24,8 +24,8 @@ function NovoUsuario() {
           <label htmlFor="senha">Senha</label>
         </div>
         <div className={style.form_group}>
-          <input id="confirmacao-senha" name="confirmarsenha" type="password" className={style.form_control} required />
-          <label htmlFor="confirmacao-senha">Confirmação de senha</label>
+          <input id="confirmarsenha" name="confirmarsenha" type="password" className={style.form_control} required />
+          <label htmlFor="confirmarsenha">Confirmar senha</label>
         </div>
         <div className={style.form_button}>
           <button type="submit" className={style.btn}>Cadastrar</button>
