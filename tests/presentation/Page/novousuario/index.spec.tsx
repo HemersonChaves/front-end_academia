@@ -26,7 +26,7 @@ describe('Componente <novousuario />', () => {
   test('deve iniciar com inputs de confirmar senha vazios', () => {
     render(<NovoUsuario />);
 
-    const inputConfirmacaoSenha = screen.getByRole('textbox', { name: /confirmar senha/i });
+    const inputConfirmacaoSenha = screen.getByLabelText(/Confirmar senha/);
     expect(inputConfirmacaoSenha).toHaveValue('');
     expect(inputConfirmacaoSenha).toBeInTheDocument();
   });
