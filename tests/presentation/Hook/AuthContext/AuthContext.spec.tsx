@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { useContext } from 'react';
-import { AuthContext, AuthProvider } from '../../../src/presentation/Hook/authContext';
+import { AuthContext, AuthProvider } from '../../../../src/presentation/Hook/AuthContext';
 
 function TestComponent() {
   const { auth } = useContext(AuthContext);
@@ -12,7 +12,7 @@ function TestComponent() {
   );
 }
 
-describe('component AuthContext', () => {
+describe('component <AuthContext />', () => {
   test('deve ter o valor padrao de signed como falso', () => {
     render(<TestComponent />);
     expect(screen.getByTestId('test-false')).toBeInTheDocument();
