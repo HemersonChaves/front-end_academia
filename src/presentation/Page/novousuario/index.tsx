@@ -1,4 +1,4 @@
-import Nav from '../../Components/nav';
+import Nav from '../../Components/Nav';
 import style from './styles.module.css';
 
 function NovoUsuario() {
