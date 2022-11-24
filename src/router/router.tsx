@@ -4,9 +4,7 @@ import {
 import { ProtectedRoute, ProtectedRouteProps } from '../presentation/Components/RouteGuard';
 import Login from '../presentation/Page/Login';
 
-import Main from '../presentation/Page/main';
-import NoMatch from '../presentation/Page/noMatch';
-import NovoUsuario from '../presentation/Page/novousuario';
+import { Main, NoMatch, NovoUsuario } from '../presentation/Page';
 
 function RoutesPages() {
   const defaultProtectedRouteProps: Omit<ProtectedRouteProps, 'outlet'> = {
