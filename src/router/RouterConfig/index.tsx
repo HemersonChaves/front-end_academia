@@ -1,36 +1,37 @@
-import React, { ReactNode } from 'react';
-import { Outlet, Path, RouteObject } from 'react-router-dom';
-import { ProtectedRouteProps, ProtectedRoute } from '../../presentation/Components';
-import { NovoUsuario, NoMatch, Main } from '../../presentation/Page';
-import Login from '../../presentation/Page/Login';
+import { Outlet, RouteObject } from 'react-router-dom';
+import { ProtectedRoute } from '../../presentation/Components';
+import {
+  Login, Main, NoMatch, NovoUsuario,
+} from '../../presentation/Page';
+import RoutesPath from '../enum';
+import RouterBuilder from './RouterFactory';
 
-enum RoutesPath {
-  MAIN = '/',
-  LOGIN = 'login',
-  NOVOUSUARIO = 'novousuario',
-  DASHBOARD = 'dashboard',
-}
-function routesWithPaths(path: string, element: ReactNode): RouteObject {
-  return {
-    path,
-    element,
-  };
-}
-function createRouterPath(routes: RouteObject[]): RouteObject[] {
-  routes.push(routesWithPaths(RoutesPath.MAIN, <Main />));
-  routes.push(routesWithPaths(RoutesPath.LOGIN, <Login />));
-  routes.push(routesWithPaths(RoutesPath.NOVOUSUARIO, <NovoUsuario />));
-  routes.push(routesWithPaths(RoutesPath.DASHBOARD, <ProtectedRoute outlet=<Main /> />));
-  return routes;
-}
+const routeschild: RouteObject[] = [];
+const routerb = new RouterBuilder();
+routerb.addPath(RoutesPath.MAIN);
+routerb.addElement(<Main />);
 
-const a: RouteObject[] = [{ errorElement: <NoMatch /> }];
+routeschild.push(routerb.build());
 
-export const rootPageRoutes: RouteObject[] = [{
-  path: '/',
-  element: <Outlet />,
-  errorElement: <NoMatch />,
-  children: createRouterPath(a),
-}];
+routerb.addPath(RoutesPath.LOGIN);
+routerb.addElement(<Login />);
 
-export default { rootPageRoutes };
+routeschild.push(routerb.build());
+
+routerb.addPath(RoutesPath.NOVOUSUARIO);
+routerb.addElement(<NovoUsuario />);
+
+routeschild.push(routerb.build());
+
+routerb.addPath(RoutesPath.DASHBOARD);
+routerb.addElement(<ProtectedRoute outlet=<span>Dashboard</span> />);
+
+routeschild.push(routerb.build());
+
+routerb.addPath(RoutesPath.MAIN);
+routerb.addElement(<Outlet />);
+routerb.addErrorElement(<NoMatch />);
+routerb.addChildren(routeschild);
+
+const routesbuild = routerb.build();
+export default routesbuild;
