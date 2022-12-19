@@ -1,9 +1,9 @@
-import { BrowserRouter } from 'react-router-dom';
-import RoutesPages from './router/RoutesPages';
+import { RouterProvider } from 'react-router-dom';
+import { CreateRouter } from './router/CreateRoute';
 
 function App() {
   return (
-    <RoutesPages />
+    <RouterProvider router={CreateRouter({ strategy: 'browser' })} />
   );
 }
 
