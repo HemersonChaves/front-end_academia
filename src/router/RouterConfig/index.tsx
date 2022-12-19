@@ -4,7 +4,7 @@ import {
   Login, Main, NoMatch, NovoUsuario,
 } from '../../presentation/Page';
 import RoutesPath from '../enum';
-import RouterBuilder from './RouterFactory';
+import RouterBuilder from '../RouterBuilder';
 
 const routeschild: RouteObject[] = [];
 const routerb = new RouterBuilder();
