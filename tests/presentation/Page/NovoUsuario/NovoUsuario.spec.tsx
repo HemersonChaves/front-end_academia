@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import NovoUsuario from '../../../../src/presentation/Page/NovoUsuario';
+import NovoUsuario from '../../../../src/presentation/Page/Novousuario';
 
 describe('Componente <NovoUsuario />', () => {
   test('deve iniciar com inputs de nome vazios', () => {
