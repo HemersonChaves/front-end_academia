@@ -1,7 +1,7 @@
 import { screen, render, waitFor } from '@testing-library/react';
 import * as ReactRouterDom from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import RoutesPages from '../../../../src/router/router';
+import { CreateRouter } from '../../../../src/router/CreateRoute';
 
 const mockedNavigate = jest.fn();
 
@@ -13,11 +13,7 @@ jest.mock('react-router-dom', () => ({
 describe('Component Page inicial', () => {
   const interacaoUsuario = userEvent.setup();
   test('deve conter o elemento título', () => {
-    render(
-      <ReactRouterDom.BrowserRouter>
-        <RoutesPages />
-      </ReactRouterDom.BrowserRouter>,
-    );
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
 
     const h1Element = screen.getByRole('heading', {
       name: /bem vindo ao gymr/i,
@@ -26,11 +22,7 @@ describe('Component Page inicial', () => {
     expect(h1Element).toBeInTheDocument();
   });
   test('deve iniciar com botões de cadastro ou de login e lembrar senha ', () => {
-    render(
-      <ReactRouterDom.BrowserRouter>
-        <RoutesPages />
-      </ReactRouterDom.BrowserRouter>,
-    );
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
     // encontrar o botão iniciar sessão
     const botaoEntrar = screen.getByText('Entrar');
 
@@ -48,13 +40,10 @@ describe('Component Page inicial', () => {
     expect(botaoLembrarSenha).toBeInTheDocument();
   });
   test('deve redirecionar para página de erro 404', async () => {
-    const badRoute = '/some/bad/route';
+    const badRoute = ['/', '/somebadroute'];
 
-    // use <MemoryRouter> when you want to manually control the history
     render(
-      <ReactRouterDom.MemoryRouter initialEntries={[badRoute]}>
-        <RoutesPages />
-      </ReactRouterDom.MemoryRouter>,
+      <ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: badRoute, initialIndex: 1 })} />,
     );
 
     // verify navigation to "no match" route
@@ -63,11 +52,7 @@ describe('Component Page inicial', () => {
     });
   });
   test('deve redireciona para o cadastro de novo usuário', async () => {
-    render(
-      <ReactRouterDom.BrowserRouter>
-        <RoutesPages />
-      </ReactRouterDom.BrowserRouter>,
-    );
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
     // encontrar o botão iniciar sessão
     const botaoCadastrar = screen.getByText('Cadastrar');
 
@@ -77,11 +62,7 @@ describe('Component Page inicial', () => {
     });
   });
   test('deve redireciona para area de login', async () => {
-    render(
-      <ReactRouterDom.BrowserRouter>
-        <RoutesPages />
-      </ReactRouterDom.BrowserRouter>,
-    );
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
     // encontrar o botão iniciar sessão
     const botaoEntrar = screen.getByText('Entrar');
 
