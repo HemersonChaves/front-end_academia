@@ -3,35 +3,39 @@ import { ProtectedRoute } from '../../presentation/Components';
 import {
   Login, Main, NoMatch, NovoUsuario,
 } from '../../presentation/Page';
-import RoutesPath from '../enum';
+import RoutesPath from '../PathPage/RootPath';
 import RouterBuilder from '../RouterBuilder';
 
-const routeschild: RouteObject[] = [];
-const routerb = new RouterBuilder();
-routerb.addPath(RoutesPath.MAIN);
-routerb.addElement(<Main />);
+const routeRoot = new RouterBuilder();
 
-routeschild.push(routerb.build());
+const routeMain = new RouterBuilder();
+routeMain.addPath(RoutesPath.MAIN);
+routeMain.addElement(<Main />);
 
-routerb.addPath(RoutesPath.LOGIN);
-routerb.addElement(<Login />);
+routeRoot.addChildren(routeMain.build());
 
-routeschild.push(routerb.build());
+const routeLogin = new RouterBuilder();
+routeLogin.addPath(RoutesPath.LOGIN);
+routeLogin.addElement(<Login />);
 
-routerb.addPath(RoutesPath.NOVOUSUARIO);
-routerb.addElement(<NovoUsuario />);
+routeRoot.addChildren(routeLogin.build());
 
-routeschild.push(routerb.build());
+const routeNovoUsuario = new RouterBuilder();
+routeNovoUsuario.addPath(RoutesPath.NOVOUSUARIO);
+routeNovoUsuario.addElement(<NovoUsuario />);
 
-routerb.addPath(RoutesPath.DASHBOARD);
-routerb.addElement(<ProtectedRoute outlet=<span>Dashboard</span> />);
+routeRoot.addChildren(routeNovoUsuario.build());
 
-routeschild.push(routerb.build());
+const routeDashboard = new RouterBuilder();
 
-routerb.addPath(RoutesPath.MAIN);
-routerb.addElement(<Outlet />);
-routerb.addErrorElement(<NoMatch />);
-routerb.addChildren(routeschild);
+routeDashboard.addPath(RoutesPath.DASHBOARD);
+routeDashboard.addElement(<ProtectedRoute outlet=<span>Dashboard</span> />);
 
-const routesbuild = routerb.build();
+routeRoot.addChildren(routeDashboard.build());
+
+routeRoot.addPath(RoutesPath.MAIN);
+routeRoot.addElement(<Outlet />);
+routeRoot.addErrorElement(<NoMatch />);
+
+const routesbuild = routeRoot.build();
 export default routesbuild;
