@@ -1,7 +1,7 @@
-enum RoutesPath {
+enum RootPath {
   MAIN = '/',
   LOGIN = 'login',
   NOVOUSUARIO = 'novousuario',
   DASHBOARD = 'dashboard',
 }
-export default RoutesPath;
+export default RootPath;
