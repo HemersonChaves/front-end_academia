@@ -20,4 +20,9 @@ describe('RouterBuilder', () => {
     instance.addElement(<span>elemento react</span>);
     expect(spyOnRouterBuilder).toBeCalledTimes(1);
   });
+  test('deve ser possível adicionar um ErrorElement', () => {
+    const spyOnRouterBuilder = jest.spyOn(instance, 'addErrorElement');
+    instance.addErrorElement(<span>erro elemento react</span>);
+    expect(spyOnRouterBuilder).toBeCalledTimes(1);
+  });
 });
