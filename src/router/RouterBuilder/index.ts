@@ -24,9 +24,6 @@ class RouterBuilder implements IRouteBuilder {
   }
 
   addChildren(child: RouteObject) {
-    if (!this.routeChildren) {
-      this.routeChildren = [];
-    }
     this.routeChildren.push(child);
     delete this.route.children;
     this.route.children = this.routeChildren;
