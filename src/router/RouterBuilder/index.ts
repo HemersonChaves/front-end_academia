@@ -15,8 +15,8 @@ class RouterBuilder implements IRouteBuilder {
   private routeChildren: RouteObject[];
 
   constructor() {
-    this.route = {};
-    this.routeChildren = [];
+    this.route = <RouteObject>{};
+    this.routeChildren = <RouteObject[]>[];
   }
 
   addErrorElement(errorElement: ReactNode) {
@@ -38,7 +38,7 @@ class RouterBuilder implements IRouteBuilder {
   }
 
   build(): RouteObject {
-    const routebuilt = { ...this.route };
+    const routebuilt: RouteObject = { ...this.route };
     this.clear();
     return routebuilt;
   }
