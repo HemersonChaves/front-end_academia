@@ -2,5 +2,7 @@
 node_modules
 dist
 coverage
+cypress
+cypress.config.ts
 /jest.config.ts
 /src/test/setup.ts
