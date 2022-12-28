@@ -10,7 +10,7 @@ function Nav({ path, modo }: NavProps) {
       <a href={path}>
         <i className="las la-lg la-angle-left" />
       </a>
-      {modo === 'edicao' ? <button type="button" aria-label="edicao"><i className="las la-lg la-pen" /></button> : ''}
+      {modo === 'edicao' ? <button className={style.acao} type="button" aria-label="edicao"><i className="las la-lg la-pen" /></button> : ''}
     </nav>
   );
 }
