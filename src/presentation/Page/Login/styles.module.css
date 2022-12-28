@@ -1,0 +1,99 @@
+.container {
+  min-height: 100%;
+  color: var(--light-gray);
+  background: var(--green-500);
+  padding-top: 1rem;
+}
+
+
+.main_login {
+  margin: 10rem auto;
+  width: 100%;
+}
+
+.form_group {
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 1.25rem;
+}
+/* ================================================================= */
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--soft-gray);
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--light-gray);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--light-gray);
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-width: 2px;
+  border-image: var(--soft-gray);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--soft-gray);
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+
+
+/*   ------------------ */
+
+
+
+.btn {
+  width: 90%;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--green-500);
+}
+
+.btn:hover {
+  background: var(--soft-gray);
+}
+.btn_link{
+  margin: 0 2rem;
+}
+
+.btn_link:hover {
+  color: var(--soft-gray); 
+}
+.btn_link span {
+  color: var(--light-gray); 
+}
