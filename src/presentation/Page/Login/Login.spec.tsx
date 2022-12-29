@@ -27,4 +27,12 @@ describe('Component Page Login', () => {
     expect(inputEmail).toBeInTheDocument();
     expect(inputEmail).toHaveValue('');
   });
+  test('deve conter um input text para senha com valor vazio', () => {
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: ['/', '/login'], initialIndex: 1 })} />);
+    // encontrar o input no DOM
+    const inputSenha = screen.getByPlaceholderText('Senha');
+    // garantir que o input esteja no documento
+    expect(inputSenha).toBeInTheDocument();
+    expect(inputSenha).toHaveValue('');
+  });
 });
