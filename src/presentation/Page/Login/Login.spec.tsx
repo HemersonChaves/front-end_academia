@@ -19,4 +19,11 @@ describe('Component Page Login', () => {
 
     expect(h1Element).toBeInTheDocument();
   });
+  test('deve conter um input text para o email', () => {
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: ['/', '/login'], initialIndex: 1 })} />);
+    // encontrar o input no DOM
+    const inputEmail = screen.getByPlaceholderText('Email');
+    // garantir que o input esteja no documento
+    expect(inputEmail).toBeInTheDocument();
+  });
 });
