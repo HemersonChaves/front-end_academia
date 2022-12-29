@@ -39,18 +39,6 @@ describe('Component Page inicial', () => {
     expect(botaoCadastrar).toBeInTheDocument();
     expect(botaoLembrarSenha).toBeInTheDocument();
   });
-  test('deve redirecionar para página de erro 404', async () => {
-    const badRoute = ['/', '/somebadroute'];
-
-    render(
-      <ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: badRoute, initialIndex: 1 })} />,
-    );
-
-    // verify navigation to "no match" route
-    await waitFor(() => {
-      expect(screen.getByText(/erro 404/i)).toBeInTheDocument();
-    });
-  });
   test('deve redireciona para o cadastro de novo usuário', async () => {
     render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
     // encontrar o botão iniciar sessão
