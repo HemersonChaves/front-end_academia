@@ -35,4 +35,18 @@ describe('Component Page Login', () => {
     expect(inputSenha).toBeInTheDocument();
     expect(inputSenha).toHaveValue('');
   });
+  test('deve conter um botão de entrar', () => {
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: ['/', '/login'], initialIndex: 1 })} />);
+    // encontrar o botão no DOM
+    const botao = screen.getByRole('button', { name: /entrar/i });
+    // garantir que o botão esteja no documento
+    expect(botao).toBeInTheDocument();
+  });
+  test('deve conter um link lembrar senha', () => {
+    render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'memory', initialPathName: ['/', '/login'], initialIndex: 1 })} />);
+    // encontrar o botão no DOM
+    const botao = screen.getByRole('link', { name: /lembrar senha/i });
+    // garantir que o botão esteja no documento
+    expect(botao).toBeInTheDocument();
+  });
 });
