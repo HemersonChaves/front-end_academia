@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import * as ReactRouterDom from 'react-router-dom';
-import { CreateRouter } from '../../../router/CreateRoute';
+import { CreateRouter } from '../../../../src/router/CreateRoute';
 
 const mockedNavigate = jest.fn();
 
