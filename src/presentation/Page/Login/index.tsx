@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import Container from '../../Components/Container';
 import Header from '../../Components/Header';
 import Nav from '../../Components/Nav';
 import style from './styles.module.css';
 
 function Login() {
   return (
-    <div data-testid="login" className={style.container}>
+    <Container data-testid="login">
       <Nav path="/" />
       <Header title="Entrar com email" />
       <main className={style.main_login}>
@@ -30,8 +31,7 @@ function Login() {
           </div>
         </div>
       </main>
-    </div>
-
+    </Container>
   );
 }
 

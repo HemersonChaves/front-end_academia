@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import Container from '../../Components/Container';
 import Header from '../../Components/Header';
 import style from './styles.module.css';
 
@@ -12,7 +13,7 @@ function Main() {
   }
 
   return (
-    <div className={style.container}>
+    <Container>
       <Header title="Bem vindo ao Gymr" />
       <main className={style.main_login}>
         <div className={style.form_control}>
@@ -41,7 +42,7 @@ function Main() {
 
         </div>
       </main>
-    </div>
+    </Container>
   );
 }
 export default Main;
