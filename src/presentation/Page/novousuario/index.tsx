@@ -1,9 +1,9 @@
-import Nav from '../../Components/Nav';
+import { Container, Nav } from '../../Components/Elements';
 import style from './styles.module.css';
 
 function NovoUsuario() {
   return (
-    <div className={style.container} data-testid="novo-usuario">
+    <Container data-testid="novo-usuario">
       <header>
         <Nav path="/" />
         <div className={style.heading}>
@@ -31,8 +31,7 @@ function NovoUsuario() {
           <button type="submit" className={style.btn}>Cadastrar</button>
         </div>
       </section>
-    </div>
-
+    </Container>
   );
 }
 export default NovoUsuario;

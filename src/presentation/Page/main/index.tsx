@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Container from '../../Components/Container';
-import Header from '../../Components/Header';
+import { Container, Header } from '../../Components/Elements';
 import style from './styles.module.css';
 
 function Main() {

@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import Container from '../../Components/Container';
-import Header from '../../Components/Header';
-import Nav from '../../Components/Nav';
+import { Container, Header, Nav } from '../../Components/Elements';
 import style from './styles.module.css';
 
 function Login() {
