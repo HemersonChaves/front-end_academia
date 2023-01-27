@@ -1,44 +1,24 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Container, Header } from '../../Components/Elements';
+import Button from '../../Components/Elements/Button';
 import style from './styles.module.css';
 
 function Main() {
   const navigate = useNavigate();
-  function handlePageCadastro() {
+  const handlePageCadastro = () => {
     navigate('novousuario');
-  }
-  function handlePageLogin() {
+  };
+  const handlePageLogin = () => {
     navigate('login');
-  }
+  };
 
   return (
     <Container>
       <Header title="Bem vindo ao Gymr" />
       <main className={style.main_login}>
         <div className={style.form_control}>
-
-          <button
-            onClick={handlePageLogin}
-            className={style.btn}
-            type="button"
-          >
-            Entrar
-          </button>
-          <button
-            onClick={handlePageCadastro}
-            className={style.btn}
-            type="button"
-          >
-            Cadastrar
-          </button>
-        </div>
-        <div>
-          <Link to="lembrarsenha" className={style.btn_link} type="button">
-            lembrar
-            {' '}
-            <span> senha </span>
-          </Link>
-
+          <Button type="button" handleClick={handlePageLogin}>Entrar</Button>
+          <Button type="button" handleClick={handlePageCadastro}>Cadastrar</Button>
         </div>
       </main>
     </Container>
