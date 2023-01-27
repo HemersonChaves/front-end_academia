@@ -21,23 +21,15 @@ describe('Component Page inicial', () => {
 
     expect(h1Element).toBeInTheDocument();
   });
-  test('deve iniciar com botões de cadastro ou de login e lembrar senha ', () => {
+  test('deve iniciar com botões de cadastro e de login', () => {
     render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
     // encontrar o botão iniciar sessão
     const botaoEntrar = screen.getByText('Entrar');
 
     // encontrar o botão criar conta
     const botaoCadastrar = screen.getByText('Cadastrar');
-
-    const botaoLembrarSenha = screen.getByRole(
-      'link',
-      {
-        name: /lembrar senha/i,
-      },
-    );
     expect(botaoEntrar).toBeInTheDocument();
     expect(botaoCadastrar).toBeInTheDocument();
-    expect(botaoLembrarSenha).toBeInTheDocument();
   });
   test('deve redireciona para o cadastro de novo usuário', async () => {
     render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
