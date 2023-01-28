@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Container, Header, Nav } from '../../Components/Elements';
+import {
+  Button, Container, Header, Nav, Panel,
+} from '../../Components/Elements';
 import style from './styles.module.css';
 
 function Login() {
+  const handle = () => { };
   return (
     <Container data-testid="login">
       <Nav path="/" />
-      <Header title="Entrar com email" />
-      <main className={style.main_login}>
+      <Header>Entrar com email</Header>
+      <Panel>
         <div className={style.form_control}>
           <div className={style.form_group}>
             <input type="input" className={style.form__field} placeholder="Email" name="email" id="email" required />
@@ -17,18 +20,15 @@ function Login() {
             <input type="password" className={style.form__field} placeholder="Senha" name="senha" id="senha" required />
             <label htmlFor="senha" className={style.form__label}>Senha</label>
           </div>
-          <div className={style.form_button}>
-            <button type="submit" className={style.btn}>Entrar</button>
-          </div>
-          <div>
+          <div className={style.form_group}>
+            <Button type="submit" handleClick={handle}>Entrar</Button>
             <Link to="lembrarsenha" className={style.btn_link} type="button">
               lembrar
-              {' '}
               <span> senha </span>
             </Link>
           </div>
         </div>
-      </main>
+      </Panel>
     </Container>
   );
 }
