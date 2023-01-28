@@ -1,36 +1,36 @@
-import { Container, Nav } from '../../Components/Elements';
+import {
+  Button, Container, Header, Panel,
+} from '../../Components/Elements';
 import style from './styles.module.css';
 
 function NovoUsuario() {
+  const handle = () => { };
   return (
     <Container data-testid="novo-usuario">
-      <header>
-        <Nav path="/" />
-        <div className={style.heading}>
-          <h1>Nova conta</h1>
+      <Header>Nova conta</Header>
+      <Panel>
+        <div className={style.form_control}>
+          <div className={style.form_group}>
+            <input type="input" className={style.form__field} placeholder="Nome" name="nome" id="nome" required />
+            <label htmlFor="nome" className={style.form__label}>Nome</label>
+          </div>
+          <div className={style.form_group}>
+            <input type="input" className={style.form__field} placeholder="Email" name="email" id="email" required />
+            <label htmlFor="email" className={style.form__label}>Email</label>
+          </div>
+          <div className={style.form_group}>
+            <input type="password" className={style.form__field} placeholder="Senha" name="senha" id="senha" required />
+            <label htmlFor="senha" className={style.form__label}>Senha</label>
+          </div>
+          <div className={style.form_group}>
+            <input type="password" className={style.form__field} placeholder="Confirmar senha" name="confirmarsenha" id="confirmarsenha" required />
+            <label htmlFor="confirmarsenha" className={style.form__label}>Confirmar senha</label>
+          </div>
+          <div className={style.form_group}>
+            <Button type="submit" handleClick={handle}>Novo</Button>
+          </div>
         </div>
-      </header>
-      <section>
-        <div className={style.form_group}>
-          <input id="nome" name="nome" type="text" className={style.form_control} required />
-          <label htmlFor="nome">Nome</label>
-        </div>
-        <div className={style.form_group}>
-          <input id="email" name="email" type="email" className={style.form_control} required />
-          <label htmlFor="email">Email</label>
-        </div>
-        <div className={style.form_group}>
-          <input id="senha" name="senha" type="password" className={style.form_control} required />
-          <label htmlFor="senha">Senha</label>
-        </div>
-        <div className={style.form_group}>
-          <input id="confirmarsenha" name="confirmarsenha" type="password" className={style.form_control} required />
-          <label htmlFor="confirmarsenha">Confirmar senha</label>
-        </div>
-        <div className={style.form_button}>
-          <button type="submit" className={style.btn}>Cadastrar</button>
-        </div>
-      </section>
+      </Panel>
     </Container>
   );
 }

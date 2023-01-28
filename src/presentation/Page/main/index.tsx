@@ -16,9 +16,7 @@ function Main() {
     <Container>
       <Header>
         Bem vindo
-        {' '}
         <br />
-        {' '}
         Gymr
       </Header>
       <Panel>

@@ -1,76 +1,65 @@
-.container {
-  min-height: 100%;
-  color: var(--light-gray);
-  background: var(--green-500);
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.2rem 0.5rem 2rem 0.5rem;
-}
-
-.heading {
-  margin: 0 auto 3rem;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-}
-
 .form_group {
   margin-bottom: 1rem;
   position: relative;
   padding: 1.25rem;
+  width: 100%;
 }
 
 .form_control {
-  background: transparent;
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.form_control:focus {
-  outline: none;
-}
-
-input:focus {
-  outline: none;
-}
-
-.form_group label {
-  display: block;
-  margin-bottom: 0;
-  position: absolute;
-  top: 10%;
-  pointer-events: none;
-}
-
-.form_control:focus~label,
-.form_control input[type="email"]:invalid~label,
-.form_control:valid~label {
-  top: -0.75rem;
-  font-size: 1rem;
-}
-
-.form_button {
-  margin: 5rem auto;
-  justify-content: center;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  font-size: 1.75rem;
-  font-weight: 700;
+  margin: 5rem auto 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn {
-  width: 90%;
-  padding: 1.25rem;
-  border-radius: 1rem;
-  margin: 1rem;
-  margin-bottom: 0;
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--soft-gray);
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--light-gray);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
 }
 
-.btn-form:hover {
-  background: var(--soft-gray);
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--light-gray);
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-width: 2px;
+  border-image: var(--soft-gray);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--soft-gray);
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
 }
