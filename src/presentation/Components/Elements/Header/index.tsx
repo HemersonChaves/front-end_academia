@@ -1,12 +1,12 @@
 import style from './styles.module.css';
 
 interface HeaderProps {
-  title: string;
+  children: React.ReactNode;
 }
-function Header({ title }: HeaderProps) {
+function Header({ children }: HeaderProps) {
   return (
     <header className={style.header}>
-      <h1>{title}</h1>
+      <h1>{children}</h1>
     </header>
   );
 }

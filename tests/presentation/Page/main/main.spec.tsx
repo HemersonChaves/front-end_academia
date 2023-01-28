@@ -16,7 +16,7 @@ describe('Component Page inicial', () => {
     render(<ReactRouterDom.RouterProvider router={CreateRouter({ strategy: 'browser' })} />);
 
     const h1Element = screen.getByRole('heading', {
-      name: /bem vindo ao gymr/i,
+      name: /bem vindo gymr/i,
     });
 
     expect(h1Element).toBeInTheDocument();
